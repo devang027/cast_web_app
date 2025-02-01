@@ -1,5 +1,50 @@
+import 'package:demo_web_app/product.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+List<String> productList = [for (int i = 1; i <= 25; i++) 'assets/pd$i.jpeg'];
+String bgOne = "assets/main_background.webp";
+String bgTwo = "assets/main_background_2.webp";
+String bgThree = "assets/main_background_3.webp";
+List<Product> products = [
+  Product(
+      title:
+          'S G Iron Castings (Spheroidal Graphite Iron Castings / Nodular Iron Castings)',
+      description:
+          'S G Iron is also known as Spheroidal Graphite Iron, Ductile Cast Iron, Nodular Cast Iron, Spherulitic Graphite Cast Iron. S G Iron is a type of cast iron that has been treated while molten with an element such as magnesium or cerium to induce the formation of free graphite as nodules or spherulites. This imparts a measurable degree of ductility (easily manipulated) to the cast metal. The ductile iron family offers the design engineer a unique combination of strength, wear resistance, fatigue resistance, and toughness, as well as excellent ductility characteristics.S G Iron/Ductile iron is not a single material but is part of a group of materials which can be produced to have a wide range of properties through control of the microstructure. The common defining characteristic of this group of materials is the shape of the graphite. In ductile irons, the graphite is in the form of nodules rather than flakes as it is in grey iron. The sharp shape of the flakes of graphite create stress concentration points within the metal matrix and the rounded shape of the nodules less so, thus inhibiting the creation of cracks and providing the enhanced ductility that gives the alloy its name.This nodular graphite structure inhibits the creation of linear cracks hence the ability to withstand distortion.',
+      specification: """Composition:
+- Carbon 3.2 to 3.6%
+- Silicon 2.2 to 2.8%
+- Manganese 0.1 to 0.5%
+- Magnesium 0.03 to 0.05%
+- Phosphorus 0.005 to 0.04%
+- Sulfur 0.005 to 0.02%
+- Copper 0.40%
+- Iron balance
+
+Applications:
+Ductile iron is useful in automotive components, off-highway diesel trucks, Class 8 trucks, agricultural tractors, and oil well pumps.
+
+Specifications:
+- IS – 1865 – 1998 (Third Reprint)
+- Grades: SG – 350/22, SG – 400/15, SG – 450/10, SG – 500/7, SG – 600/3, SG – 700/2, SG – 800/2 & SG – 900/2.
+
+Products:
+Crank Gear, Separator Body Liner, Winch Drums, Elevator Blocks, Impellers, Valves, Hollow Cylinder, and various S G Iron Castings.
+              """),
+  Product(
+      title: 'Cast Iron Castings (Graded) & Alloy C.I. Castings',
+      description:
+          'Cast iron is a hard, brittle alloy of iron and carbon that can be readily cast in a mold and contains a higher proportion of carbon than steel does. It is firm and unchangeable.We are leading manufacturer & exporter of Cast Iron Castings (Graded) & Alloy C.I. Castings which are available in both standard specifications and customized specifications, built as per the specifications given by the client. Latest design & fabrication techniques are used to manufacture our range of C.I. Castings to make these perfect for wide section of different applications.We are offering our clients, Cast Iron Castings (Graded) & Alloy C.I. Castings These are widely appreciated by our clients for their strength, durability and corrosion resistance. We can provide these in customized sizes and specifications in accordance with the requirements of our esteemed clients.We supply comprehensive range of Cast Iron Castings (Graded) & Alloy C.I. Castings which are extensively used in engineering and construction industries. Furthermore, these are manufactured in accordance with international standards and are delivered on time.',
+      specification: """Specifications:
+IS – 210 – 1993.
+Grade – FG – 200/220, FG – 260, FG – 300, FG – 350
+All Grades better Corrosion, wear and heat resisting.
+
+Products:
+Pump Casing, Chain Wheels, Frames of Filling & Cantering Machines, Crank Gear, Separator Body Liner, Bull Gear, Winch Drums, Fly Wheels, Elevator Blocks, Impellers, Valves, Hollow Cylinder, Friction Brake Drums (duly pressure tested 1000 P.S.I.), Drive Plates and other various types of Cast Iron Castings (Graded) & Alloy C.I. Castings.
+              """),
+];
 
 void main() {
   runApp(const MyApp());
@@ -46,64 +91,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
-    return /*Scaffold(
-      appBar: AppBar(
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                InkWell(
-                    onTap: () async {
-                      await _makePhoneCall("");
-                    },
-                    child: const Icon(Icons.phone)),
-                const SizedBox(width: 10),
-                const Flexible(
-                  child: Text('94287 07047 I 94290 66811',
-                      softWrap: true, style: TextStyle(fontSize: 22)),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                InkWell(
-                    onTap: () async {
-                      await _launchEmail("shivasandcast@gmail.com");
-                    },
-                    child: const Icon(Icons.email)),
-                const SizedBox(width: 10),
-                const Flexible(
-                    child: Text('shivasandcast@gmail.com',
-                        softWrap: true, style: TextStyle(fontSize: 20))),
-              ],
-            ),
-          ],
-        ),
-        bottom: TabBar(
-          controller: _tabController,
-          labelStyle:
-              const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          indicatorColor: Colors.white,
-          tabs: const [
-            Tab(text: 'Home'),
-            Tab(text: 'Products'),
-            Tab(text: 'About Us'),
-            Tab(text: 'Enquiry'),
-          ],
-        ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          HomeTabView(_tabController),
-          ProductsTabView(tabController: _tabController),
-          AboutUsTabView(tabController: _tabController),
-          EnquiryTabView(_tabController),
-        ],
-      ),
-    );*/
-        Scaffold(
+    return Scaffold(
       body: Column(
         children: [
           // Top Contact Bar
@@ -122,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage>
                             await _launchEmail("shivasandcast@gmail.com");
                           },
                           child: const Icon(Icons.email,
-                              color: Colors.red, size: 18)),
+                              color: Colors.blue, size: 18)),
                       const SizedBox(width: 5),
                       InkWell(
                           onTap: () async {
@@ -141,13 +129,13 @@ class _MyHomePageState extends State<MyHomePage>
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      const Icon(Icons.phone, color: Colors.red, size: 18),
-                      const SizedBox(width: 5),
-                      Flexible(child: callWidget("+91-9624650037")),
+                      const Icon(Icons.phone, color: Colors.blue, size: 18),
                       const SizedBox(width: 5),
                       Flexible(child: callWidget("+91-8200721928")),
                       const SizedBox(width: 5),
-                      Flexible(child: callWidget("+91-9558521521"))
+                      Flexible(child: callWidget("+91-9558521521")),
+                      const SizedBox(width: 5),
+                      Flexible(child: callWidget("+91-9624650037"))
                     ],
                   ),
                 ),
@@ -168,30 +156,14 @@ class _MyHomePageState extends State<MyHomePage>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 // Logo Section
-                Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(4.0),
-                      child: ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(5)),
-                        child: Image.asset(
-                          'assets/logo.jpeg',
-                          // Replace with your logo URL
-                          height: 50,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    const Text(
-                      "SSC",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.orange,
-                      ),
-                    ),
-                  ],
+                const Text(
+                  "Shiva Sand Cast",
+                  style: TextStyle(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                    color: Colors.white,
+                  ),
                 ),
                 Flexible(
                   child: TabBar(
@@ -245,7 +217,7 @@ class _MyHomePageState extends State<MyHomePage>
       scheme: 'mailto',
       path: email,
       query:
-          'subject=Hello&body=How can I help you?', // Add subject and body (optional)
+          'subject=Enquiry&body=How can I help you?', // Add subject and body (optional)
     );
 
     if (await canLaunchUrl(emailUri)) {
@@ -281,14 +253,14 @@ class HomeTabView extends StatelessWidget {
         children: [
           // Hero Section
           SizedBox(
-            height: MediaQuery.of(context).size.height / 3.0,
+            height: MediaQuery.of(context).size.height,
             child: Stack(
               children: [
                 // Background Image
                 Container(
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/bg_home.png"),
+                      image: AssetImage(bgOne),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -303,38 +275,31 @@ class HomeTabView extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        'SSC',
-                        style: TextStyle(
-                          fontSize: 36,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.amber,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      Text(
-                        'SHIVA SAND CAST',
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.white,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      SizedBox(height: 10),
-                     /* Container(
-                        padding: const EdgeInsets.fromLTRB(15, 5, 15, 5),
-                        color: Colors.amber,
-                        child: const Text(
-                          'Mfg. Of Investment Casting',
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'Quality Foundry Solutions',
                           style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.brown,
+                            fontSize: 45,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
                           ),
                           textAlign: TextAlign.center,
                         ),
-                      ),*/
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'Delivering top-notch ferrous and non-ferrous castings',
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      SizedBox(height: 10),
                     ],
                   ),
                 ),
@@ -342,154 +307,184 @@ class HomeTabView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 30),
+          const Divider(
+            color: Colors.brown,
+          ),
+          const Center(
+            child: Text(
+              'Products',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            ),
+          ),
 
+          const Divider(
+            color: Colors.brown,
+          ),
           Padding(
               padding: const EdgeInsets.all(10),
               child: Center(
                 child: Wrap(
                   spacing: 20,
+                  runSpacing: 20,
                   crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                  /*  ClipRRect(
+                  children: productList.map((item) {
+                    return ClipRRect(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(10)),
-                        child:
-                            Image.asset("assets/product_investment_cast.png")),*/
-                    ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10)),
-                        child: Image.asset("assets/product_sand_cast.png")),
-                   /* ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10)),
-                        child:
-                            Image.asset("assets/product_shell_mold_cast.png")),*/
-                  ],
+                        child: Image.asset(item));
+                  }).toList(),
                 ),
               )),
-
-          // Features Section
-          /*Padding(
+          // Services Section
+          Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                const Divider(
+                  color: Colors.brown,
+                ),
                 const Text(
-                  'Our Features',
+                  'Services',
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                 ),
+                const Divider(
+                  color: Colors.brown,
+                ),
                 const SizedBox(height: 10),
-                GridView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 16,
-                    mainAxisSpacing: 16,
-                  ),
-                  itemCount: 4,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)),
-                      elevation: 4,
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                Wrap(
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  children: products.map((product) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        color: Colors.white,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Icon(Icons.star, size: 48, color: Colors.blue[400]),
-                            const SizedBox(height: 10),
-                            Text(
-                              'Feature ${index + 1}',
-                              style: const TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SelectableText(
+                                product.title,
+                                textAlign: TextAlign.start,
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                             const SizedBox(height: 5),
-                            const Text(
-                              'Brief description about this feature goes here.',
-                              textAlign: TextAlign.center,
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.grey),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SelectableText(
+                                product.description,
+                                textAlign: TextAlign.start,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  textBaseline: TextBaseline.alphabetic,
+                                  color: Colors.black87,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: SelectableText(
+                                product.specification,
+                                textAlign: TextAlign.start,
+                                style: const TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black87,
+                                ),
+                              ),
                             ),
                           ],
                         ),
                       ),
                     );
-                  },
-                ),
+                  }).toList(),
+                )
               ],
             ),
-          ),*/
+          ),
 
-          /*const SizedBox(height: 30),*/
+          const SizedBox(height: 30),
 
           // Testimonials Section
-          /* Container(
+          Container(
             width: MediaQuery.of(context).size.width,
             color: Colors.blue[50],
-            padding: const EdgeInsets.symmetric(vertical: 30),
-            child: Column(
+            padding: const EdgeInsets.all(8.0),
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'What Our Users Say',
-                  style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    'INSPECTION & QUALITY',
+                    style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                  ),
                 ),
-                const SizedBox(height: 20),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: List.generate(3, (index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Card(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12)),
-                          elevation: 4,
-                          child: Container(
-                            width: 300,
-                            padding: const EdgeInsets.all(16.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    CircleAvatar(
-                                      backgroundColor: Colors.blue[200],
-                                      child: Text(
-                                        'U${index + 1}',
-                                        style: const TextStyle(
-                                            color: Colors.white),
-                                      ),
-                                    ),
-                                    const SizedBox(width: 10),
-                                    Text(
-                                      'User ${index + 1}',
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  'This is an amazing platform! I loved using it for my work and personal needs.',
-                                  style: TextStyle(
-                                      fontSize: 14, color: Colors.grey),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    }),
+                SizedBox(height: 20),
+                Padding(
+                  padding: EdgeInsets.all(16.0),
+                  child: SelectableText(
+                    """Foundry
+We have 2 stages of inspection in our foundry.
+
+INSPECTION BEFORE SHOT BLASTING:
+• Decoring of moulds.
+• Knock out of runners & risers.
+• Heat wise hardness checking of each batch by POLDI hardness tester.
+• Visual inspection for crack or any other foundry defects.
+• O.K. pieces sent for shot blasting.
+
+INSPECTION AFTER SHOT BLASTING:
+• Visual inspection before fettling.
+• Critical wall thickness checking by dial calliper.
+• Chipping and grinding by conventional method.
+• Checking for chipping, grinding & any defects before Zn – Cr primer by dipping.
+• Microstructure (random checking).
+
+Foundry Related Test Reports:
+• Foundry test reports as per A 3.1 EN 10204 certificate for each batch of casting.
+• Dimensional test report for first article inspection.
+
+Machine Shop
+We have 3 stages of inspection in our machine shop:
+
+1) Incoming Inspection:
+• Inspect 100% incoming raw and machined components.
+• Check visual defects in raw castings before machining.
+• 100% dimension check for outsourced/pre-machined components.
+• Assembly child part inspection as per control plan.
+
+2) In-process Inspection:
+• Inspect processes every batch for GD&T errors.
+• Check first component for dimensional variation after setup change.
+• Verify critical parameters using external CMM facility.
+
+3) Final Inspection:
+• Check dimensional accuracy as per drawing.
+• Hydro testing for pressure-rated components.
+• Inspect visual defects, foundry defects, dents, chatter marks, etc.
+• Perform assembly inspection, hydro testing, and working inspection.
+• Inspect packing for defects in exports/domestic shipments.
+• Pre-dispatch inspection for technical and commercial documentation.
+
+Machine Shop Related Test Reports:
+• Dimensional inspection reports as per control plan.
+• Hydro test report for component pressure rating.
+• Assembly inspection report as per drawing requirement.
+• CMM reports for GD&T for first article inspection or changes in machining process.
+""",
+                    style:
+                        TextStyle(fontSize: 28, fontWeight: FontWeight.normal),
                   ),
                 ),
               ],
             ),
-          ),*/
-
-          const SizedBox(height: 30),
+          ),
 
           // Footer Section
           Container(
@@ -501,16 +496,15 @@ class HomeTabView extends StatelessWidget {
               children: [
                 const Text(
                   /*© 2024*/
-                  'Shiva Sand Cast',
+                  'Address',
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                    const SelectableText(
                       'Survey no 64, Plot no 275, Shyam industrial park - 2,\nBhavda road, Bakrol Bujrang, Ahmedabad 382430',
-                      softWrap: true,
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 14, color: Colors.white),
                     ),
@@ -605,23 +599,14 @@ class ProductsTabView extends StatelessWidget {
               child: Center(
                 child: Wrap(
                   spacing: 20,
+                  runSpacing: 20,
                   crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                   /* ClipRRect(
+                  children: productList.map((item) {
+                    return ClipRRect(
                         borderRadius:
                             const BorderRadius.all(Radius.circular(10)),
-                        child:
-                            Image.asset("assets/product_investment_cast.png")),*/
-                    ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10)),
-                        child: Image.asset("assets/product_sand_cast.png")),
-                  /*  ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(10)),
-                        child:
-                            Image.asset("assets/product_shell_mold_cast.png")),*/
-                  ],
+                        child: Image.asset(item));
+                  }).toList(),
                 ),
               )),
 
@@ -707,42 +692,20 @@ class AboutUsTabView extends StatelessWidget {
           const SizedBox(height: 20),
 
           // Content Section
-          Padding(
-            padding: const EdgeInsets.all(16.0),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Our Mission',
-                            style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            'We aim to provide exceptional services and products to empower our customers.',
-                            style: TextStyle(fontSize: 16, color: Colors.grey),
-                          ),
-                          Text(
-                            'We started with a vision to bring innovation and quality to the forefront. Our journey is one of hard work, dedication, and commitment to excellence.',
-                            style: TextStyle(fontSize: 16, color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 16),
-                    Image.asset(
-                      "assets/logo.jpeg",
-                      width: MediaQuery.of(context).size.width / 3.0,
-                    ),
-                  ],
+                SelectableText(
+                  'We “SHIVA SAND CAST” introduce ourselves as a company with a professional approach that is aimed at result orientation.\nSHIVA SAND CAST has built up a modern manufacturing complex consisting of Pattern Shop, Moulding, Melting, Fettling, and Heat-Treatment, Shot-Blasting, Machine Shop and other testing facilities including destructive non-destructive test, hydro test, a pneumatic test required for quality production of ferrous/non-ferrous castings.\nThese facilities are developed with experience so as to create a capable as well as sustainable infrastructure to meet stringent national and international standards therein.',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 20),
+                SelectableText(
+                  '\n\nWhy SHIVA SAND CAST?\n- Quick Response Time.Quality Performance.\n\n- On-time job completion.\n\n- Low Overheads for Clients.\n\n- One-to-One Customer Support.\n\n- Client Satisfaction Guaranteed.',
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.normal),
+                ),
+                SizedBox(height: 20),
               ],
             ),
           )
@@ -797,104 +760,251 @@ class EnquiryTabView extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 20),
           // Form Section
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: SizedBox(
-                  width: MediaQuery.of(context).size.width / 3.0,
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      children: [
-                        TextFormField(
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          maxLength: 70,
-                          onSaved: (value) => name = value ?? '',
-                          validator: (value) => value == null || value.isEmpty
-                              ? 'Please enter your name'
-                              : null,
-                          decoration: InputDecoration(
-                            labelText: 'Your Name',
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12)),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        TextFormField(
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          maxLength: 64,
-                          onSaved: (value) => email = value ?? '',
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter your email';
-                            }
-                            final regex = RegExp(
-                                r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
-                            if (!regex.hasMatch(value)) {
-                              return 'Please enter a valid email';
-                            }
-                            return null; // Input is valid
-                          },
-                          decoration: InputDecoration(
-                            labelText: 'Your Email',
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12)),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        TextFormField(
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                          maxLines: 4,
-                          onSaved: (value) => message = value ?? '',
-                          validator: (value) => value == null || value.isEmpty
-                              ? 'Please enter your message'
-                              : null,
-                          maxLength: 500,
-                          decoration: InputDecoration(
-                            labelText: 'Your Message',
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12)),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        ElevatedButton(
-                          onPressed: () async {
-                            if (_formKey.currentState!.validate()) {
-                              _formKey.currentState!.save();
-                            //await _launchEmail(email);
-                            }
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueAccent,
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 32, vertical: 12),
-                          ),
-                          child: const Text('Submit'),
-                        ),
-                      ],
+          SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: Stack(
+              children: [
+                // Background Image
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(bgOne),
+                      fit: BoxFit.cover,
                     ),
-                  )),
+                  ),
+                ),
+                // Transparent Black Overlay
+                Container(
+                  color: Colors.black
+                      .withOpacity(0.5), // Adjust the opacity as needed
+                ),
+                // Centered Text Content
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Center(
+                    child: Container(
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border(
+                          bottom:
+                              BorderSide(color: Colors.grey[300]!, width: 1),
+                        ),
+                      ),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Expanded(
+                              child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Text(
+                                  'Shiva Sand Cast',
+                                  style: TextStyle(
+                                    fontSize: 32,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                callWidget("+91-8200721928"),
+                                callWidget("+91-9558521521"),
+                                callWidget("+91-9624650037"),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    InkWell(
+                                        onTap: () async {
+                                          await _launchEmail(
+                                              "shivasandcast@gmail.com");
+                                        },
+                                        child: const Icon(Icons.email,
+                                            color: Colors.blue, size: 18)),
+                                    const SizedBox(width: 5),
+                                    Flexible(
+                                      child: InkWell(
+                                          onTap: () async {
+                                            await _launchEmail(
+                                                "shivasandcast@gmail.com");
+                                          },
+                                          child: const SelectableText(
+                                            "shivasandcast@gmail.com",
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.black),
+                                          )),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          )),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: SingleChildScrollView(
+                                physics: const BouncingScrollPhysics(),
+                                child: SizedBox(
+                                    width:
+                                        MediaQuery.of(context).size.width / 3.0,
+                                    child: Form(
+                                      key: _formKey,
+                                      child: Column(
+                                        children: [
+                                          TextFormField(
+                                            autovalidateMode: AutovalidateMode
+                                                .onUserInteraction,
+                                            maxLength: 70,
+                                            onSaved: (value) =>
+                                                name = value ?? '',
+                                            validator: (value) =>
+                                                value == null || value.isEmpty
+                                                    ? 'Please enter your name'
+                                                    : null,
+                                            decoration: InputDecoration(
+                                              labelText: 'Your Name',
+                                              border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12)),
+                                            ),
+                                          ),
+                                          const SizedBox(height: 20),
+                                          TextFormField(
+                                            autovalidateMode: AutovalidateMode
+                                                .onUserInteraction,
+                                            maxLength: 64,
+                                            onSaved: (value) =>
+                                                email = value ?? '',
+                                            validator: (value) {
+                                              if (value == null ||
+                                                  value.isEmpty) {
+                                                return 'Please enter your email';
+                                              }
+                                              final regex = RegExp(
+                                                  r"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
+                                              if (!regex.hasMatch(value)) {
+                                                return 'Please enter a valid email';
+                                              }
+                                              return null; // Input is valid
+                                            },
+                                            decoration: InputDecoration(
+                                              labelText: 'Your Email',
+                                              border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12)),
+                                            ),
+                                          ),
+                                          const SizedBox(height: 20),
+                                          TextFormField(
+                                            autovalidateMode: AutovalidateMode
+                                                .onUserInteraction,
+                                            maxLines: 4,
+                                            onSaved: (value) =>
+                                                message = value ?? '',
+                                            validator: (value) => value ==
+                                                        null ||
+                                                    value.isEmpty
+                                                ? 'Please enter your message'
+                                                : null,
+                                            maxLength: 500,
+                                            decoration: InputDecoration(
+                                              labelText: 'Your Message',
+                                              border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          12)),
+                                            ),
+                                          ),
+                                          const SizedBox(height: 20),
+                                          ElevatedButton(
+                                            onPressed: () async {
+                                              if (_formKey.currentState!
+                                                  .validate()) {
+                                                _formKey.currentState!.save();
+                                                //await _launchEmail(email);
+                                              }
+                                            },
+                                            style: ElevatedButton.styleFrom(
+                                              backgroundColor:
+                                                  Colors.blueAccent,
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 32,
+                                                      vertical: 12),
+                                            ),
+                                            child: const Text(
+                                              'Submit',
+                                              style: TextStyle(
+                                                  color: Colors.white),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    )),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
       ),
     );
   }
+
+  callWidget(String phone) {
+    return InkWell(
+      onTap: () async {
+        await _makePhoneCall(phone);
+      },
+      child: SelectableText(
+        phone,
+        style: const TextStyle(fontSize: 14, color: Colors.black),
+      ),
+    );
+  }
+
   Future<void> _launchEmail(String email) async {
     final Uri emailUri = Uri(
       scheme: 'mailto',
-      path: "shivasandcast@gmail.com",
-      query:
-      'subject=ProductEnquiry&body=How can I help you?', // Add subject and body (optional)
+      path: email,
+      query: 'subject=Enquiry&body=How can I help you?',
     );
 
     if (await canLaunchUrl(emailUri)) {
       await launchUrl(emailUri);
     } else {
       throw 'Could not launch $emailUri';
+    }
+  }
+
+  Future<void> _makePhoneCall(String number) async {
+    final Uri callUri = Uri(
+      scheme: 'tel',
+      path: number,
+    );
+
+    if (await canLaunchUrl(callUri)) {
+      await launchUrl(callUri);
+    } else {
+      throw 'Could not launch $callUri';
     }
   }
 }
