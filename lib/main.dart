@@ -1,3 +1,48 @@
+import 'package:demo_web_app/utils/app_strings.dart';
+import 'package:demo_web_app/utils/theme_data.dart';
+import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
+import 'package:flutter/material.dart';
+
+import 'screens/home_page.dart';
+
+void main() {
+  runApp(
+    EasyDynamicThemeWidget(
+      child: const MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+
+  @override
+  void initState() {
+
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: AppStrings.appName,
+      theme: lightThemeData,
+      darkTheme: darkThemeData,
+      debugShowCheckedModeBanner: false,
+      themeMode: EasyDynamicTheme.of(context).themeMode,
+      home: HomePage(),
+    );
+  }
+}
+
+/*
 import 'package:demo_web_app/product.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -495,7 +540,9 @@ Machine Shop Related Test Reports:
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Text(
-                  /*© 2024*/
+                  */
+/*© 2024*/ /*
+
                   'Address',
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
@@ -523,7 +570,8 @@ Machine Shop Related Test Reports:
                   ],
                 ),
                 const SizedBox(height: 10),
-                /* const Wrap(
+                */
+/* const Wrap(
                   spacing: 16,
                   children: [
                     Text(
@@ -540,6 +588,8 @@ Machine Shop Related Test Reports:
                     ),
                   ],
                 ),*/
+/*
+
               ],
             ),
           ),
@@ -1008,3 +1058,4 @@ class EnquiryTabView extends StatelessWidget {
     }
   }
 }
+*/
