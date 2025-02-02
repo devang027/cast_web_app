@@ -54,12 +54,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.grey,
       extendBodyBehindAppBar: true,
-      appBar: ResponsiveWidget.isSmallScreen(context)
+      /*appBar: ResponsiveWidget.isSmallScreen(context)
           ? AppBar(
         backgroundColor: Colors.black.withOpacity(_opacity),
               elevation: 0,
               centerTitle: true,
-              actions: [
+             *//* actions: [
                 IconButton(
                   icon: const Icon(Icons.brightness_6),
                   splashColor: Colors.transparent,
@@ -68,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                     EasyDynamicTheme.of(context).changeTheme();
                   },
                 ),
-              ],
+              ],*//*
               title: Text(
                 AppStrings.appName,
                 style: TextStyle(
@@ -83,8 +83,8 @@ class _HomePageState extends State<HomePage> {
           : PreferredSize(
               preferredSize: Size(screenSize.width, 1000),
               child: TopBarContents(_opacity),
-            ),
-      drawer: const ExploreDrawer(),
+            ),*/
+      //drawer: const ExploreDrawer(),
       body: WebScrollbar(
         color: Colors.black,
         backgroundColor: Colors.blueGrey.withOpacity(0.3),

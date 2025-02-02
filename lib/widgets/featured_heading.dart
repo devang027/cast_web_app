@@ -34,10 +34,13 @@ class ProductHeading extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 5),
-                Text(
-                  'Unique wildlife tours & destinations',
-                  textAlign: TextAlign.end,
-                  style: Theme.of(context).primaryTextTheme.titleMedium,
+                Visibility(
+                  visible: false,
+                  child: Text(
+                    'Unique wildlife tours & destinations',
+                    textAlign: TextAlign.end,
+                    style: Theme.of(context).primaryTextTheme.titleMedium,
+                  ),
                 ),
                 SizedBox(height: 10),
               ],
@@ -54,11 +57,14 @@ class ProductHeading extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Expanded(
-                  child: Text(
-                    'Unique wildlife tours & destinations',
-                    textAlign: TextAlign.end,
-                    style: Theme.of(context).primaryTextTheme.titleMedium,
+                Visibility(
+                   visible: false,
+                  child: Expanded(
+                    child: Text(
+                      'Unique wildlife tours & destinations',
+                      textAlign: TextAlign.end,
+                      style: Theme.of(context).primaryTextTheme.titleMedium,
+                    ),
                   ),
                 ),
               ],

@@ -15,19 +15,19 @@ class InfoText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        SelectableText(
           '$type: ',
           style: TextStyle(
-            color: Colors.blueGrey[300],
+            color: Colors.black54,
             fontFamily: AppStrings.fontMontserrat,
             fontSize: 16,
           ),
         ),
         Flexible(
-          child: Text(
+          child: SelectableText(
             text,
             style: TextStyle(
-              color: Colors.blueGrey[100],
+              color: Colors.black87,
               fontFamily: AppStrings.fontMontserrat,
               fontSize: 16,
             ),

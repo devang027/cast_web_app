@@ -53,7 +53,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     SizedBox(width: screenSize.width / 8),
-                    InkWell(
+                    /* InkWell(
                       onHover: (value) {
                         setState(() {
                           value
@@ -123,11 +123,11 @@ class _TopBarContentsState extends State<TopBarContents> {
                           )
                         ],
                       ),
-                    ),
+                    ),*/
                   ],
                 ),
               ),
-              IconButton(
+              /*IconButton(
                 icon: Icon(Icons.brightness_6),
                 splashColor: Colors.transparent,
                 highlightColor: Colors.transparent,
@@ -135,7 +135,7 @@ class _TopBarContentsState extends State<TopBarContents> {
                 onPressed: () {
                   EasyDynamicTheme.of(context).changeTheme();
                 },
-              ),
+              ),*/
               SizedBox(
                 width: screenSize.width / 50,
               ),

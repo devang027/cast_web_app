@@ -142,7 +142,7 @@ class _ExploreDrawerState extends State<ExploreDrawer> {
                     )
                   : Container(),
               userEmail != null ? SizedBox(height: 20) : Container(),*/
-              InkWell(
+              /*InkWell(
                 onTap: () {},
                 child: const Text(
                   'About Us',
@@ -151,7 +151,7 @@ class _ExploreDrawerState extends State<ExploreDrawer> {
                       fontSize: 22,
                       fontFamily: AppStrings.fontMontserrat),
                 ),
-              ),
+              ),*/
               Padding(
                 padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
                 child: Divider(
@@ -159,7 +159,7 @@ class _ExploreDrawerState extends State<ExploreDrawer> {
                   thickness: 2,
                 ),
               ),
-              InkWell(
+              /*InkWell(
                 onTap: () {},
                 child: const Text(
                   'Contact Us',
@@ -168,7 +168,7 @@ class _ExploreDrawerState extends State<ExploreDrawer> {
                       fontSize: 22,
                       fontFamily: AppStrings.fontMontserrat),
                 ),
-              ),
+              ),*/
               Expanded(
                 child: Align(
                   alignment: Alignment.bottomCenter,
