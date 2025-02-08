@@ -86,8 +86,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    key: _homeKey,
+                 /* SizedBox(
                     height: screenSize.height,
                     width: screenSize.width,
                     child: Stack(
@@ -143,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                  ),
+                  ),*/
                   Container(
                       key: _productsKey,
                       child: ProductHeading(screenSize: screenSize)),
