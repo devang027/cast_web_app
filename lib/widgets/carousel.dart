@@ -64,7 +64,7 @@ Pump Casing, Chain Wheels, Frames of Filling & Cantering Machines, Crank Gear, S
       return IntrinsicHeight(
         // Allows dynamic height
         child: Card(
-          color: Colors.white,
+          color: Colors.white30,
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,

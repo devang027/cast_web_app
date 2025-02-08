@@ -71,11 +71,10 @@ class _HomePageState extends State<HomePage> {
         : 1;
 
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
       body: WebScrollbar(
         color: Colors.black,
-        backgroundColor: Colors.blueGrey.withOpacity(0.3),
         heightFraction: 0.3,
         controller: _scrollController,
         child: Stack(
@@ -163,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                       vertical:
                           screenSize.height < 800 ? 10 : screenSize.height / 30,
                     ),
-                    color: Theme.of(context).canvasColor,
+                    color: Colors.black12,
                     width: screenSize.width,
                     child: RichText(
                       text: const TextSpan(
@@ -204,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                       vertical:
                           screenSize.height < 800 ? 10 : screenSize.height / 30,
                     ),
-                    color: Theme.of(context).canvasColor,
+                    color: Colors.black12,
                     width: screenSize.width,
                     child: const Text(
                       "Foundry Inspection\n\n"
@@ -257,12 +256,12 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            /*Positioned(
+            Positioned(
               top: 0,
               left: 0,
               right: 0,
               child: Container(
-                color: Colors.black.withOpacity(0.8),
+                color: Colors.black,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -344,7 +343,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-            )*/
+            )
           ],
         ),
       ),
@@ -538,7 +537,7 @@ class _HomePageState extends State<HomePage> {
                       vertical:
                           screenSize.height < 800 ? 10 : screenSize.height / 30,
                     ),
-                    color: Theme.of(context).canvasColor,
+                    color: Colors.black12,
                     width: screenSize.width,
                     child: RichText(
                       text: const TextSpan(
@@ -577,7 +576,7 @@ class _HomePageState extends State<HomePage> {
                       vertical:
                           screenSize.height < 800 ? 10 : screenSize.height / 30,
                     ),
-                    color: Theme.of(context).canvasColor,
+                    color: Colors.black12,
                     width: screenSize.width,
                     child: const Text(
                       "Foundry Inspection\n\n"
