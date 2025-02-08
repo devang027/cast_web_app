@@ -6,10 +6,12 @@ import '../utils/app_strings.dart';
 class DestinationHeading extends StatelessWidget {
   const DestinationHeading({
     Key? key,
+    required this.headerText,
     required this.screenSize,
   }) : super(key: key);
 
   final Size screenSize;
+  final String headerText;
 
   @override
   Widget build(BuildContext context) {
@@ -20,26 +22,26 @@ class DestinationHeading extends StatelessWidget {
         right: screenSize.width / 15,
       ),
       child: ResponsiveWidget.isSmallScreen(context)
-          ? Container(
+          ? SizedBox(
               width: screenSize.width,
               // color: Colors.black,
-              child: const Text(
-                'Services',
+              child: Text(
+                headerText,
                 textAlign: TextAlign.start,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 24,
                   fontFamily: AppStrings.fontMontserrat,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             )
-          : Container(
+          : SizedBox(
               width: screenSize.width,
               // color: Colors.black,
-              child: const Text(
-                'Services',
+              child: Text(
+                headerText,
                 textAlign: TextAlign.start,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 40,
                   fontFamily: AppStrings.fontMontserrat,
                   fontWeight: FontWeight.bold,

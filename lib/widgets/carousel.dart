@@ -12,12 +12,11 @@ class DestinationCarousel extends StatefulWidget {
 
 class _DestinationCarouselState extends State<DestinationCarousel> {
   final String imagePath = 'assets/';
-
   final CarouselSliderController _controller = CarouselSliderController();
+  int _current = 0;
 
   final List<bool> _isHovering = List.generate(25, (index) => false);
   final List<bool> _isSelected = List.generate(25, (index) => index == 0);
-  int _current = 0;
 
   List<String> images = [for (int i = 1; i <= 25; i++) 'assets/pd$i.jpeg'];
   List<Product> products = [
@@ -62,16 +61,14 @@ Pump Casing, Chain Wheels, Frames of Filling & Cantering Machines, Crank Gear, S
 
   List<Widget> generateImageTiles(screenSize) {
     return products.map((product) {
-      return Card(
-        color: Colors.white,
-        child: SizedBox(
-          // Set a fixed height for cards
-          height: screenSize.height * 0.4, // Adjust based on design needs
+      return IntrinsicHeight(
+        // Allows dynamic height
+        child: Card(
+          color: Colors.white,
           child: SingleChildScrollView(
-            // Prevent overflow by making it scrollable
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              // Ensure it takes only necessary space
+              // Ensures the Column wraps content dynamically
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -79,17 +76,16 @@ Pump Casing, Chain Wheels, Frames of Filling & Cantering Machines, Crank Gear, S
                     product.title,
                     textAlign: TextAlign.start,
                     style: const TextStyle(
-                        fontFamily: AppStrings.fontMontserrat,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
+                      fontFamily: AppStrings.fontMontserrat,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 5),
                 Padding(
-                  padding: EdgeInsets.only(
-                    left: screenSize.width / 25,
-                    right: screenSize.width / 25,
-                  ),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: screenSize.width / 25),
                   child: SelectableText(
                     product.description,
                     textAlign: TextAlign.start,
@@ -100,11 +96,10 @@ Pump Casing, Chain Wheels, Frames of Filling & Cantering Machines, Crank Gear, S
                     ),
                   ),
                 ),
+                const SizedBox(height: 5),
                 Padding(
-                  padding: EdgeInsets.only(
-                    left: screenSize.width / 25,
-                    right: screenSize.width / 25,
-                  ),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: screenSize.width / 25),
                   child: SelectableText(
                     product.specification,
                     textAlign: TextAlign.start,
@@ -128,28 +123,37 @@ Pump Casing, Chain Wheels, Frames of Filling & Cantering Machines, Crank Gear, S
     var screenSize = MediaQuery.of(context).size;
     var imageSliders = generateImageTiles(screenSize);
 
-    return CarouselSlider(
-      items: imageSliders,
-      options: CarouselOptions(
-          scrollPhysics: ResponsiveWidget.isSmallScreen(context)
-              ? const PageScrollPhysics()
-              : const NeverScrollableScrollPhysics(),
-          enlargeCenterPage: true,
-          aspectRatio: 16 / 9,
-          autoPlay: true,
-          onPageChanged: (index, reason) {
-            setState(() {
-              _current = index;
-              for (int i = 0; i < imageSliders.length; i++) {
-                if (i == index) {
-                  _isSelected[i] = true;
-                } else {
-                  _isSelected[i] = false;
-                }
-              }
-            });
-          }),
-      carouselController: _controller,
+    return StatefulBuilder(
+      builder: (context, setState) {
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          curve: Curves.easeInOut,
+          height: getCurrentHeight(screenSize),
+          width: screenSize.width,
+          child: CarouselSlider(
+            items: imageSliders,
+            options: CarouselOptions(
+              scrollPhysics: ResponsiveWidget.isSmallScreen(context)
+                  ? const PageScrollPhysics()
+                  : const NeverScrollableScrollPhysics(),
+              enlargeCenterPage: true,
+              autoPlay: true,
+              aspectRatio: 16 / 9,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _current = index;
+                });
+              },
+            ),
+            carouselController: _controller,
+          ),
+        );
+      },
     );
+  }
+
+  double getCurrentHeight(Size screenSize) {
+    // Define height dynamically based on current index
+    return screenSize.height * 0.5; // Adjust this logic if needed
   }
 }

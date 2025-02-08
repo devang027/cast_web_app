@@ -3,7 +3,6 @@ import 'package:demo_web_app/widgets/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'bottom_bar_column.dart';
 import 'info_text.dart';
 
 class BottomBar extends StatelessWidget {
@@ -17,24 +16,6 @@ class BottomBar extends StatelessWidget {
       child: ResponsiveWidget.isSmallScreen(context)
           ? Column(
               children: [
-                /*Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BottomBarColumn(
-                      heading: 'ABOUT',
-                      s1: 'Contact Us',
-                      s2: 'About Us',
-                      s3: '',
-                    ),
-                    BottomBarColumn(
-                      heading: 'SOCIAL',
-                      s1: 'Twitter',
-                      s2: 'Facebook',
-                      s3: 'YouTube',
-                    ),
-                  ],
-                ),*/
                 Container(
                   color: Colors.blueGrey,
                   width: double.maxFinite,
@@ -54,7 +35,7 @@ class BottomBar extends StatelessWidget {
                 const InfoText(
                   type: 'Address',
                   text:
-                      'Survey no 64, Plot no 275, Shyam industrial park - 2,Bhavda road, Bakrol Bujrang, Ahmedabad 382430',
+                      'Survey no 64, Plot no 275, Shyam industrial park - 2, Bhavda road, Bakrol Bujrang, Ahmedabad 382430',
                 ),
                 const SizedBox(height: 20),
                 const InfoText(
@@ -83,30 +64,6 @@ class BottomBar extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    /*Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          BottomBarColumn(
-                            heading: 'ABOUT',
-                            s1: 'Contact Us',
-                            s2: 'About Us',
-                            s3: '',
-                          ),
-                          BottomBarColumn(
-                            heading: 'SOCIAL',
-                            s1: 'Twitter',
-                            s2: 'Facebook',
-                            s3: 'YouTube',
-                          ),
-                          Container(
-                            color: Colors.blueGrey,
-                            width: 2,
-                            height: 150,
-                          ),
-                        ],
-                      ),
-                    ),*/
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,7 +80,7 @@ class BottomBar extends StatelessWidget {
                           const InfoText(
                             type: 'Address',
                             text:
-                                'Survey no 64, Plot no 275, Shyam industrial park - 2,Bhavda road, Bakrol Bujrang, Ahmedabad 382430',
+                                'Survey no 64, Plot no 275, Shyam industrial park - 2, Bhavda road, Bakrol Bujrang, Ahmedabad 382430',
                           ),
                           const SizedBox(height: 5),
                           const InfoText(

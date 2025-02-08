@@ -46,10 +46,10 @@ class _ProductTilesState extends State<ProductTiles> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              IconButton(
-                icon: const Icon(Icons.arrow_back_ios),
+              FloatingActionButton(
+                shape: const CircleBorder(),
                 onPressed: _scrollLeft,
-              ),
+                child: const Icon(Icons.arrow_back_ios, color: Colors.black)),
               Expanded(
                 child: SingleChildScrollView(
                   controller: _scrollController,
@@ -60,11 +60,11 @@ class _ProductTilesState extends State<ProductTiles> {
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Column(
                           children: [
-                            SizedBox(
-                              height: widget.screenSize.width / 6,
-                              width: widget.screenSize.width / 3.8,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(5.0),
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(5.0),
+                              child: SizedBox(
+                                height: widget.screenSize.width / 6,
+                                width: widget.screenSize.width / 3.8,
                                 child: Image.asset(
                                   assets[index],
                                   fit: BoxFit.contain,
@@ -94,9 +94,10 @@ class _ProductTilesState extends State<ProductTiles> {
                   ),
                 ),
               ),
-              IconButton(
-                icon: const Icon(Icons.arrow_forward_ios),
+              FloatingActionButton(
+                shape: const CircleBorder(),
                 onPressed: _scrollRight,
+                child: const Icon(Icons.arrow_forward_ios, color: Colors.black),
               ),
             ],
           ),

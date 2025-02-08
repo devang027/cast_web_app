@@ -30,7 +30,7 @@ var darkThemeData = ThemeData(
       color: Colors.white,
     ),
     titleMedium: TextStyle(
-      color: Colors.blueGrey[300],
+      color: Colors.black,
     ),
     displayLarge: TextStyle(
       color: Colors.white70,
