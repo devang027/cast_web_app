@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                 /* SizedBox(
+                  SizedBox(
                     height: screenSize.height,
                     width: screenSize.width,
                     child: Stack(
@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
-                  ),*/
+                  ),
                   Container(
                       key: _productsKey,
                       child: ProductHeading(screenSize: screenSize)),
@@ -257,7 +257,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Positioned(
+            /*Positioned(
               top: 0,
               left: 0,
               right: 0,
@@ -344,7 +344,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-            )
+            )*/
           ],
         ),
       ),
